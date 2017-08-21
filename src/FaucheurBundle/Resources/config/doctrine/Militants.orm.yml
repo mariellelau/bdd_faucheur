@@ -1,0 +1,89 @@
+FaucheurBundle\Entity\Militants:
+    type: entity
+    table: militants
+    uniqueConstraints:
+        militants_id_proximite_key:
+            columns:
+                - id_proximite
+        militants_email_militant_key:
+            columns:
+                - email_militant
+    id:
+        idMilitant:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_militant
+            generator:
+                strategy: SEQUENCE
+    fields:
+        nom:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+        prenom:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+        emailMilitant:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: email_militant
+        tel:
+            type: string
+            nullable: true
+            length: 20
+            options:
+                fixed: false
+        idProximite:
+            type: string
+            nullable: false
+            length: 15
+            options:
+                fixed: false
+            column: id_proximite
+        adresse:
+            type: string
+            nullable: true
+            length: 250
+            options:
+                fixed: false
+        ville:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        codepostal:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        facebook:
+            type: string
+            nullable: true
+            length: 20
+            options:
+                fixed: false
+        twitter:
+            type: string
+            nullable: true
+            length: 20
+            options:
+                fixed: false
+        notes:
+            type: string
+            nullable: true
+            length: 250
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

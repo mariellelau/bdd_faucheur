@@ -1,0 +1,27 @@
+FaucheurBundle\Entity\AssociationMilitant:
+    type: entity
+    table: association_militant
+    uniqueConstraints:
+        association_militant_id_association_key:
+            columns:
+                - id_association
+    id: {  }
+    fields:
+        idAssociation:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_association
+    oneToOne:
+        idMilitant:
+            targetEntity: Militants
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_militant:
+                    referencedColumnName: id_militant
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,56 @@
+FaucheurBundle\Entity\Actions:
+    type: entity
+    table: actions
+    uniqueConstraints:
+        actions_id_campagne_key:
+            columns:
+                - id_campagne
+    id: {  }
+    fields:
+        nomAction:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: nom_action
+        typeAction:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: type_action
+        datedeb:
+            type: datetime
+            nullable: true
+        duree:
+            type: string
+            nullable: true
+            length: null
+            options:
+                fixed: false
+        lieu:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        idCampagne:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_campagne
+    oneToOne:
+        idAction:
+            targetEntity: ParticipeAction
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_action:
+                    referencedColumnName: id_action
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

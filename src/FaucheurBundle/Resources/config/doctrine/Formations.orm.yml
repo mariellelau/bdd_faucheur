@@ -1,0 +1,71 @@
+FaucheurBundle\Entity\Formations:
+    type: entity
+    table: formations
+    uniqueConstraints:
+        formations_id_militant_key:
+            columns:
+                - id_militant
+        formations_id_campagne_key:
+            columns:
+                - id_campagne
+    id: {  }
+    fields:
+        nomFormation:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: nom_formation
+        idMilitant:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_militant
+        typeFormation:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: type_formation
+        datedeb:
+            type: datetime
+            nullable: true
+        duree:
+            type: string
+            nullable: true
+            length: null
+            options:
+                fixed: false
+        lieu:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        idCampagne:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_campagne
+        notes:
+            type: string
+            nullable: true
+            length: 250
+            options:
+                fixed: false
+    oneToOne:
+        idFormation:
+            targetEntity: ParticipeFormation
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_formation:
+                    referencedColumnName: id_militant
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,27 @@
+FaucheurBundle\Entity\ParticipeFormation:
+    type: entity
+    table: participe_formation
+    uniqueConstraints:
+        participe_formation_id_formation_key:
+            columns:
+                - id_formation
+    id: {  }
+    fields:
+        idFormation:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_formation
+    oneToOne:
+        idMilitant:
+            targetEntity: Militants
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_militant:
+                    referencedColumnName: id_militant
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

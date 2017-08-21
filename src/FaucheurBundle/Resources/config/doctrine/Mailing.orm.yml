@@ -1,0 +1,27 @@
+FaucheurBundle\Entity\Mailing:
+    type: entity
+    table: mailing
+    uniqueConstraints:
+        mailing_id_proximite_key:
+            columns:
+                - id_proximite
+    id: {  }
+    fields:
+        idProximite:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_proximite
+    oneToOne:
+        emailMilitant:
+            targetEntity: Militants
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                email_militant:
+                    referencedColumnName: email_militant
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

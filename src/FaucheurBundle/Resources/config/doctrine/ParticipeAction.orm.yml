@@ -1,0 +1,36 @@
+FaucheurBundle\Entity\ParticipeAction:
+    type: entity
+    table: participe_action
+    uniqueConstraints:
+        participe_action_id_action_key:
+            columns:
+                - id_action
+        participe_action_id_role_key:
+            columns:
+                - id_role
+    id: {  }
+    fields:
+        idAction:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_action
+        idRole:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_role
+    oneToOne:
+        idMilitant:
+            targetEntity: Militants
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_militant:
+                    referencedColumnName: id_militant
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

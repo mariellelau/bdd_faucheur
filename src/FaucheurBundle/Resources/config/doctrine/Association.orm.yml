@@ -1,0 +1,35 @@
+FaucheurBundle\Entity\Association:
+    type: entity
+    table: association
+    id: {  }
+    fields:
+        nomAssociation:
+            type: string
+            nullable: true
+            length: 150
+            options:
+                fixed: false
+            column: nom_association
+        codepostal:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        type:
+            type: string
+            nullable: true
+            length: 150
+            options:
+                fixed: false
+    oneToOne:
+        idAssociation:
+            targetEntity: AssociationMilitant
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_association:
+                    referencedColumnName: id_militant
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

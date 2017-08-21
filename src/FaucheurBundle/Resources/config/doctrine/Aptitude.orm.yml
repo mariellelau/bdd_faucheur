@@ -1,0 +1,32 @@
+FaucheurBundle\Entity\Aptitude:
+    type: entity
+    table: aptitude
+    uniqueConstraints:
+        aptitude_id_competence_key:
+            columns:
+                - id_competence
+    id: {  }
+    fields:
+        idCompetence:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_competence
+        niveau:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+    oneToOne:
+        idMilitant:
+            targetEntity: Militants
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_militant:
+                    referencedColumnName: id_militant
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

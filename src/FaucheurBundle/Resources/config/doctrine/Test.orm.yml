@@ -1,0 +1,15 @@
+FaucheurBundle\Entity\Test:
+    type: entity
+    table: null
+    repositoryClass: FaucheurBundle\Repository\TestRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        champ1:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

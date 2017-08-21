@@ -1,0 +1,31 @@
+FaucheurBundle\Entity\Competences:
+    type: entity
+    table: competences
+    id: {  }
+    fields:
+        nomCompetence:
+            type: string
+            nullable: true
+            length: 150
+            options:
+                fixed: false
+            column: nom_competence
+        detailCompetence:
+            type: string
+            nullable: true
+            length: 150
+            options:
+                fixed: false
+            column: detail_competence
+    oneToOne:
+        idCompetence:
+            targetEntity: Aptitude
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_competence:
+                    referencedColumnName: id_militant
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,24 @@
+FaucheurBundle\Entity\Proximite:
+    type: entity
+    table: proximite
+    id: {  }
+    fields:
+        nomProximite:
+            type: string
+            nullable: true
+            length: 30
+            options:
+                fixed: false
+            column: nom_proximite
+    oneToOne:
+        idProximite:
+            targetEntity: Mailing
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_proximite:
+                    referencedColumnName: id_proximite
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
