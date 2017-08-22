@@ -1,2 +1,3 @@
 faucheur:
-    resource: '@FaucheurBundle/Controller/'
+    resource: "@FaucheurBundle/Resources/config/routing.yml"
+    prefix:   /

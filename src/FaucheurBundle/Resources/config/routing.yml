@@ -1,0 +1,7 @@
+faucheur_homepage: #Liste tous les articles
+    path:     /
+    defaults: { _controller: FaucheurBundle:Default:index }
+
+faucheur_militants: #Liste tous les articles
+    prefix:     /militants
+    resource: "@FaucheurBundle/Resources/config/routing/militants.yml"

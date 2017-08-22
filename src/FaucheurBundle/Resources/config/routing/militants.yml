@@ -1,0 +1,24 @@
+militants_index:
+    path:     /
+    defaults: { _controller: "FaucheurBundle:Militants:index" }
+    methods:  GET
+
+militants_show:
+    path:     /{idMilitant}/show
+    defaults: { _controller: "FaucheurBundle:Militants:show" }
+    methods:  GET
+
+militants_new:
+    path:     /new
+    defaults: { _controller: "FaucheurBundle:Militants:new" }
+    methods:  [GET, POST]
+
+militants_edit:
+    path:     /{idMilitant}/edit
+    defaults: { _controller: "FaucheurBundle:Militants:edit" }
+    methods:  [GET, POST]
+
+militants_delete:
+    path:     /{idMilitant}/delete
+    defaults: { _controller: "FaucheurBundle:Militants:delete" }
+    methods:  DELETE
